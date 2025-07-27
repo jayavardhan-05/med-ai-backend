@@ -4,6 +4,7 @@ gunicorn
 langchain
 langchain_community
 langchain_core
+langchain-together
 faiss-cpu
 sentence-transformers
 PyPDF2
