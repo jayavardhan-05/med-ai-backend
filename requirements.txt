@@ -1,4 +1,3 @@
-
 Flask
 flask_cors
 gunicorn
@@ -7,14 +6,4 @@ langchain_community
 langchain_core
 faiss-cpu
 sentence-transformers
-
-Flask
-flask_cors
-gunicorn
-langchain
-langchain_community
-langchain_core
-faiss-cpu
-sentence-transformers
-b75bac3282dbe061ca64ab43c3e61805b7d9db21
 PyPDF2
