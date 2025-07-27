@@ -1,0 +1,9 @@
+Flask
+flask_cors
+gunicorn
+langchain
+langchain_community
+langchain_core
+faiss-cpu
+sentence-transformers
+PyPDF2
