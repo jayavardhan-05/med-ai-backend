@@ -7,3 +7,4 @@ langchain_core
 faiss-cpu
 sentence-transformers
 PyPDF2
+fastapi
