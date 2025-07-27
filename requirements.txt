@@ -8,3 +8,7 @@ faiss-cpu
 sentence-transformers
 PyPDF2
 fastapi
+uvicorn
+python-dotenv
+pydantic
+requests
