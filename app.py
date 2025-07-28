@@ -3,7 +3,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 
-from langchain_together import Together
+# --- CHANGED: New import for Hugging Face ---
+from langchain_huggingface import HuggingFaceEndpoint
 from langchain.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -15,8 +16,9 @@ class Query(BaseModel):
 # --- 2. LOAD MODELS AND DATABASE AT STARTUP ---
 print("Loading models and database... This may take a moment.")
 
-if 'TOGETHER_API_KEY' not in os.environ:
-    raise ValueError("TOGETHER_API_KEY environment variable not set.")
+# --- CHANGED: Check for the new environment variable ---
+if 'HUGGINGFACEHUB_API_TOKEN' not in os.environ:
+    raise ValueError("HUGGINGFACEHUB_API_TOKEN environment variable not set.")
 
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
@@ -25,10 +27,11 @@ if not os.path.exists(db_path):
     raise FileNotFoundError(f"FAISS database not found at {db_path}.")
 db = FAISS.load_local(db_path, embeddings, allow_dangerous_deserialization=True)
 
-llm = Together(
-    model="meta-llama/Llama-3-70b-chat-hf",
+# --- CHANGED: Initialize the Hugging Face LLM instead of Together ---
+llm = HuggingFaceEndpoint(
+    repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
     temperature=0.1,
-    max_tokens=1024
+    max_new_tokens=1024
 )
 
 qa_chain = RetrievalQA.from_chain_type(
