@@ -3,6 +3,7 @@ flask_cors
 gunicorn
 langchain
 langchain_community
+langchain-huggingface
 langchain_core
 langchain-together
 faiss-cpu
