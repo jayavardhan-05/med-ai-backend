@@ -3,20 +3,20 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 
-# --- CHANGED: New import for Hugging Face ---
+# --- New import for Hugging Face ---
 from langchain_huggingface import HuggingFaceEndpoint
 from langchain.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
-# --- 1. DEFINE REQUEST AND RESPONSE MODELS ---
+# 1. DEFINE REQUEST AND RESPONSE MODELS
 class Query(BaseModel):
     question: str
 
-# --- 2. LOAD MODELS AND DATABASE AT STARTUP ---
+# 2. LOAD MODELS AND DATABASE AT STARTUP
 print("Loading models and database... This may take a moment.")
 
-# --- CHANGED: Check for the new environment variable ---
+# Check for the new environment variable
 if 'HUGGINGFACEHUB_API_TOKEN' not in os.environ:
     raise ValueError("HUGGINGFACEHUB_API_TOKEN environment variable not set.")
 
@@ -27,7 +27,7 @@ if not os.path.exists(db_path):
     raise FileNotFoundError(f"FAISS database not found at {db_path}.")
 db = FAISS.load_local(db_path, embeddings, allow_dangerous_deserialization=True)
 
-# --- CHANGED: Initialize the Hugging Face LLM instead of Together ---
+# Initialize the Hugging Face LLM instead of a local one
 llm = HuggingFaceEndpoint(
     repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
     temperature=0.1,
@@ -42,13 +42,13 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 print("✅ Models and database loaded successfully.")
 
-# --- 3. CREATE THE FASTAPI APP ---
+# 3. CREATE THE FASTAPI APP
 app = FastAPI(
     title="Pathology Q&A API",
     description="An API to ask questions about a pathology document."
 )
 
-# --- 4. DEFINE THE API ENDPOINT ---
+# 4. DEFINE THE API ENDPOINT
 @app.post("/ask", summary="Ask a question")
 async def ask_question(query: Query):
     question = query.question
