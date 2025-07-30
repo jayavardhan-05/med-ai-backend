@@ -1,5 +1,6 @@
 import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
 
@@ -46,6 +47,15 @@ print("✅ Models and database loaded successfully.")
 app = FastAPI(
     title="Pathology Q&A API",
     description="An API to ask questions about a pathology document."
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, replace with specific origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # 4. DEFINE THE API ENDPOINT

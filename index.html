@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathology Q&A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-left-color: #dc3545;
+            color: #721c24;
+        }
+        .sources {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .source-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: white;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pathology Q&A System</h1>
+        
+        <div class="input-group">
+            <label for="questionInput">Ask a question about pathology:</label>
+            <input type="text" id="questionInput" placeholder="Enter your question here..." />
+        </div>
+        
+        <button onclick="askQuestion()" id="askButton">Ask Question</button>
+        
+        <div id="responseContainer"></div>
+    </div>
+
+    <script>
+        async function askQuestion() {
+            const questionInput = document.getElementById('questionInput');
+            const askButton = document.getElementById('askButton');
+            const responseContainer = document.getElementById('responseContainer');
+            
+            const userInput = questionInput.value.trim();
+            
+            if (!userInput) {
+                alert('Please enter a question');
+                return;
+            }
+            
+            // Disable button and show loading state
+            askButton.disabled = true;
+            askButton.textContent = 'Processing...';
+            
+            // Before the API call - show loading cursor
+            document.body.style.cursor = 'wait';
+            
+            try {
+                const response = await fetch("http://localhost:8000/ask", {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({ question: userInput })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Handle the response from backend
+                console.log(data);
+                displayResponse(data);
+                
+            } catch (error) {
+                console.error("Error:", error);
+                displayError(error.message);
+            } finally {
+                // After the request completes - restore default cursor
+                document.body.style.cursor = 'default';
+                
+                // Reset button state
+                askButton.disabled = false;
+                askButton.textContent = 'Ask Question';
+            }
+        }
+        
+        function displayResponse(data) {
+            const responseContainer = document.getElementById('responseContainer');
+            
+            let html = `
+                <div class="response">
+                    <h3>Answer:</h3>
+                    <p>${data.answer || 'No answer received'}</p>
+            `;
+            
+            if (data.sources && data.sources.length > 0) {
+                html += `
+                    <div class="sources">
+                        <h4>Sources:</h4>
+                `;
+                
+                data.sources.forEach((source, index) => {
+                    html += `
+                        <div class="source-item">
+                            <strong>Source ${index + 1}:</strong><br>
+                            ${source.content || 'No content available'}
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+            }
+            
+            html += `</div>`;
+            responseContainer.innerHTML = html;
+        }
+        
+        function displayError(errorMessage) {
+            const responseContainer = document.getElementById('responseContainer');
+            responseContainer.innerHTML = `
+                <div class="response error">
+                    <h3>Error:</h3>
+                    <p>${errorMessage}</p>
+                    <p>Make sure the backend server is running on http://localhost:8000</p>
+                </div>
+            `;
+        }
+        
+        // Allow Enter key to submit question
+        document.getElementById('questionInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                askQuestion();
+            }
+        });
+        
+        // Example of wrapping other API calls with loading cursor
+        function exampleApiCall() {
+            // Before the API call - show loading cursor
+            document.body.style.cursor = 'wait';
+            
+            fetch("http://localhost:8000/your-api-endpoint", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question: "example" })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from backend
+                console.log(data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            })
+            .finally(() => {
+                // After the request completes - restore default cursor
+                document.body.style.cursor = 'default';
+            });
+        }
+    </script>
+</body>
+</html>
