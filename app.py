@@ -14,8 +14,8 @@ app = FastAPI(
 )
 
 # --- 3. LAZY LOADING SETUP ---
-# We will load the models and create the QA chain only when the first request is made.
-# This prevents the app from using too much memory on startup.
+# The QA chain is initialized to None. It will be created on the first API call
+# to prevent using too much memory on startup.
 qa_chain = None
 
 def initialize_qa_chain():
@@ -53,7 +53,6 @@ def initialize_qa_chain():
         # --- Load LLM ---
         # MEMORY FIX: Switched from the very large 70B model to the 8B model.
         # The 70B model requires hundreds of GB of RAM and will crash on standard hosting.
-        # The 8B model is much more memory-friendly.
         llm = Together(
             model="meta-llama/Llama-3-8b-chat-hf",
             temperature=0.1,
@@ -95,4 +94,3 @@ async def ask_question(query: Query):
         # Handle other potential errors during initialization or invocation
         print(f"An error occurred: {e}") # Log the error for debugging
         raise HTTPException(status_code=500, detail="An internal error occurred while processing the request.")
-
