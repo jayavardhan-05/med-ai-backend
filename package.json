@@ -1,0 +1,8 @@
+{
+  "name": "med-ai-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "python -m uvicorn app:app --reload --host 127.0.0.1 --port 8000",
+    "dev": "python -m uvicorn app:app --reload --host 127.0.0.1 --port 8000"
+  }
+}

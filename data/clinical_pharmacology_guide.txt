@@ -1,0 +1,99 @@
+# CLINICAL PHARMACOLOGY & THERAPEUTICS REFERENCE MANUAL
+# Comprehensive Clinical Drug Classes, Mechanisms, Indications, Dosing Principles & Adverse Effects
+
+## SECTION 1: CARDIOVASCULAR PHARMACOLOGY
+
+### 1. Angiotensin-Converting Enzyme (ACE) Inhibitors & ARBs
+- **Key Agents**: Enalapril, Lisinopril, Ramipril, Losartan, Valsartan.
+- **Mechanism of Action**:
+  - ACE Inhibitors inhibit kininase II / angiotensin-converting enzyme, preventing conversion of Angiotensin I to Angiotensin II (a potent vasoconstrictor and stimulator of aldosterone).
+  - ARBs selectively block Angiotensin II Type 1 (AT1) receptors on vascular smooth muscle and adrenal cortex.
+  - Results in decreased systemic vascular resistance (afterload reduction), decreased sodium/water retention (preload reduction), and attenuation of cardiac ventricular remodeling.
+- **Clinical Indications**:
+  - Essential hypertension, Heart Failure with reduced Ejection Fraction (HFrEF), diabetic nephropathy (delays progression of microalbuminuria), post-myocardial infarction.
+- **Adverse Effects & Contraindications**:
+  - Dry cough (mediated by bradykinin and substance P accumulation with ACE inhibitors; absent in ARBs).
+  - Angioedema (life-threatening airway compromise, contraindicated in history of ACE-induced angioedema).
+  - Hyperkalemia (especially in chronic kidney disease or when combined with potassium-sparing diuretics).
+  - Teratogenicity: Absolute contraindication in pregnancy (causes fetal renal dysgenesis, oligohydramnios, skull hypoplasia).
+
+### 2. Beta-Adrenergic Antagonists (Beta-Blockers)
+- **Key Agents**:
+  - Cardioselective (Beta-1): Metoprolol succinate (extended-release), Metoprolol tartrate, Atenolol, Bisoprolol.
+  - Non-selective (Beta-1 & Beta-2): Propranolol, Timolol.
+  - Mixed Alpha-1 and Beta-blockers: Carvedilol, Labetalol.
+- **Mechanism of Action**:
+  - Compete with catecholamines (epinephrine, norepinephrine) at beta-adrenergic receptors.
+  - Beta-1 blockade reduces heart rate (negative chronotropy), myocardial contractility (negative inotropy), and renin release by juxtaglomerular cells.
+  - Carvedilol and Labetalol also block alpha-1 receptors, causing peripheral vasodilation.
+- **Clinical Indications**:
+  - Chronic stable angina, post-myocardial infarction (reduces mortality and re-infarction), chronic HFrEF (specifically Metoprolol succinate, Carvedilol, Bisoprolol), supraventricular arrhythmias, hypertension, migraine prophylaxis (propranolol).
+- **Adverse Effects**:
+  - Bradycardia, AV nodal conduction blocks, bronchospasm in reactive airway disease/asthma (due to beta-2 blockade), erectile dysfunction, fatigue, masking of hypoglycemia symptoms (except diaphoresis).
+
+### 3. Calcium Channel Blockers (CCBs)
+- **Dihydropyridines**: Amlodipine, Nifedipine, Felodipine (primarily vascular smooth muscle vasodilators).
+- **Non-Dihydropyridines**: Diltiazem, Verapamil (myocardial and AV nodal depressants + moderate vasodilation).
+- **Indications**: Hypertension, Prinzmetal variant angina, rate control in atrial fibrillation (Verapamil, Diltiazem).
+- **Adverse Effects**: Peripheral ankle edema (dihydropyridines), constipation and heart block (Verapamil), gingival hyperplasia.
+
+### 4. Diuretics
+- **Loop Diuretics (Furosemide, Bumetanide, Torsemide)**: Inhibit Na-K-2Cl cotransporter in thick ascending limb of Henle. Potent natriuresis used for acute decompensated heart failure and pulmonary edema. Risk of hypokalemia, hypomagnesemia, ototoxicity.
+- **Thiazides (Hydrochlorothiazide, Chlorthalidone)**: Inhibit Na-Cl cotransporter in distal convoluted tubule. First-line for essential hypertension. Risk of hypokalemia, hyperuricemia (precipitating gout), hyperglycemia, hypercalcemia.
+- **Aldosterone Antagonists / Potassium-Sparing (Spironolactone, Eplerenone)**: Block mineralocorticoid receptors in cortical collecting tubule. Reduces mortality in HFrEF. Risk of hyperkalemia, gynecomastia (spironolactone).
+
+---
+
+## SECTION 2: ENDOCRINOLOGY & METABOLIC PHARMACOLOGY
+
+### 1. Antihyperglycemic Agents for Type 2 Diabetes
+- **Metformin (Biguanide)**:
+  - First-line agent. Activates AMP-activated protein kinase (AMPK), inhibiting hepatic gluconeogenesis and enhancing peripheral insulin sensitivity. Does NOT cause hypoglycemia or weight gain.
+  - Adverse Effects: Gastrointestinal upset (diarrhea, abdominal cramps), vitamin B12 deficiency with long-term use. Rare but fatal lactic acidosis (contraindicated in eGFR < 30 mL/min/1.73m² or severe hypoxia/sepsis).
+- **SGLT-2 Inhibitors (Empagliflozin, Dapagliflozin, Canagliflozin)**:
+  - Inhibit sodium-glucose cotransporter 2 in renal proximal convoluted tubule, inducing glucosuria.
+  - Remarkable cardiovascular and renal benefits: reduces heart failure hospitalizations and slows CKD progression.
+  - Adverse Effects: Mycotic genital infections, urinary tract infections, euglycemic diabetic ketoacidosis (euDKA), volume depletion.
+- **GLP-1 Receptor Agonists (Semaglutide, Liraglutide, Dulaglutide)**:
+  - Mimic incretin hormone GLP-1: augment glucose-dependent insulin secretion, suppress glucagon release, delay gastric emptying, promote central satiety and significant weight loss.
+  - Proven major adverse cardiovascular event (MACE) reduction.
+  - Adverse Effects: Nausea, vomiting, risk of pancreatitis. Black box warning for medullary thyroid carcinoma (contraindicated in MEN 2).
+
+### 2. Insulin Formulations
+- **Rapid-acting**: Lispro, Aspart, Glulisine (onset 15 min, peak 1 hr, duration 3-4 hrs - mealtime coverage).
+- **Short-acting**: Regular insulin (onset 30 min, IV formulation of choice for Diabetic Ketoacidosis).
+- **Intermediate-acting**: NPH (neutral protamine Hagedorn - basal coverage twice daily).
+- **Long-acting basal**: Glargine, Detemir, Degludec (peakless basal insulin, duration 24-42 hours).
+
+---
+
+## SECTION 3: ANTIMICROBIAL & INFECTIOUS DISEASE THERAPY
+
+### 1. Beta-Lactam Antibiotics
+- **Penicillins & Aminopenicillins**: Amoxicillin, Ampicillin, Piperacillin-tazobactam (extended-spectrum against Pseudomonas aeruginosa).
+- **Cephalosporins**:
+  - 1st Gen (Cefazolin, Cephalexin): Gram-positive cocci (Staph, Strep), surgical prophylaxis.
+  - 2nd Gen (Cefuroxime, Cefoxitin): Expanded gram-negative and anaerobes.
+  - 3rd Gen (Ceftriaxone, Ceftazidime): Crosses blood-brain barrier; first-line for bacterial meningitis, community-acquired pneumonia, pyelonephritis, gonorrhea.
+  - 4th Gen (Cefepime): Broad gram-positive and pseudomonal coverage.
+  - 5th Gen (Ceftaroline): Activity against Methicillin-Resistant Staphylococcus aureus (MRSA).
+- **Carbapenems (Meropenem, Imipenem)**: Ultra-broad spectrum reserved for multi-drug resistant Gram-negative bacilli, ESBL producers, and severe intra-abdominal sepsis.
+
+### 2. Non-Beta-Lactam Antibacterials
+- **Vancomycin**: Glycopeptide inhibiting bacterial cell wall peptidoglycan synthesis. Drug of choice for parenteral MRSA and severe enterococcal infections; oral formulation used for Clostridioides difficile colitis. Monitor trough levels (target 15-20 mcg/mL in severe infections) to prevent nephrotoxicity and ototoxicity. Red Man Syndrome prevented by slow infusion.
+- **Macrolides (Azithromycin, Clarithromycin)**: Inhibit 50S ribosomal subunit. Atypical community pneumonia (Mycoplasma, Chlamydia, Legionella). Risk of QT-interval prolongation.
+- **Fluoroquinolones (Ciprofloxacin, Levofloxacin, Moxifloxacin)**: Inhibit DNA topoisomerase II (DNA gyrase) and IV. Broad Gram-negative and atypical coverage. FDA warning for tendon rupture, QT prolongation, aortic aneurysm dissection.
+
+---
+
+## SECTION 4: ANALGESICS & ANTI-INFLAMMATORY AGENTS
+
+### 1. Nonsteroidal Anti-Inflammatory Drugs (NSAIDs) & Acetaminophen
+- **Acetaminophen (Paracetamol)**: Central prostaglandin inhibitor; analgesic and antipyretic without anti-inflammatory action. Maximum recommended dose 4g/day (2-3g in elderly/hepatic impairment). Overdose causes acute hepatic necrosis via toxic metabolite NAPQI, managed with N-acetylcysteine (NAC).
+- **Non-selective NSAIDs (Ibuprofen, Naproxen, Ketorolac)**: Inhibit COX-1 and COX-2, decreasing prostaglandins and thromboxanes. Risks include gastric ulceration, renal acute tubular necrosis, platelet dysfunction, and fluid retention.
+- **Selective COX-2 Inhibitors (Celecoxib)**: Sparing of gastrointestinal mucosa; preserves endothelial prostacyclin inhibition, potentially increasing thrombotic cardiovascular risk.
+
+### 2. Opioid Analgesics
+- **Agents**: Morphine, Hydromorphone, Fentanyl, Oxycodone.
+- **Mechanism**: Mu-opioid receptor agonists in central nervous system and dorsal horn of spinal cord.
+- **Clinical Concerns**: Respiratory depression, constipation, physical dependence, tolerance. Acute toxicity reversed with Naloxone.

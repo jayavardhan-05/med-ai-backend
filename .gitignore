@@ -1,0 +1,23 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment Variables & API Keys
+.env
+.env.*
+*.env
+!.env.example
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Temporary data & uploads
+data/uploads/
+*.log
+test_*.json
+test_*.txt
